@@ -12,6 +12,8 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 
+vim.keymap.set('i', 'jk', "<ESC>", { noremap = true, silent = true })
+
 -- Select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
