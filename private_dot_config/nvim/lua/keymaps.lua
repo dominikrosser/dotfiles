@@ -3,6 +3,7 @@ vim.keymap.set("n", "<leader>q", ":lua DomiCloseBuffer()<CR>", { noremap = true,
 --vim.keymap.set("n", "<leader>q", ":q<CR>", {})
 vim.keymap.set("n", "<leader>w", ":w<CR>", {})
 vim.keymap.set('n', ':q', ':Q<CR><CR>', { noremap = true, silent = true })
+vim.keymap.set({'n','i'}, '<C-s>', '<ESC>:w<CR>', {})
 
 -- Move between windows with Ctrl+hjkl
 -- Later just use the following line if out of Shortcut keys:
@@ -13,6 +14,9 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 
 vim.keymap.set('i', 'jk', "<ESC>", { noremap = true, silent = true })
+
+-- @q
+vim.keymap.set('n', '<leader>2', '@q', { noremap = true, silent = true })
 
 -- Select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
@@ -52,6 +56,8 @@ vim.keymap.set('n', ';f', builtin.find_files, {})
 vim.keymap.set('n', ';g', builtin.live_grep, {})
 -- Treesitter telescope
 vim.keymap.set('n', ';s', builtin.treesitter, {})
+
+vim.keymap.set({'n', 'i'}, '<C-t>', ';t', {noremap=true, silent=true})
 
 -- Leap
 -- Currently in leap.lua
