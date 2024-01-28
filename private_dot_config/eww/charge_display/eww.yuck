@@ -3,26 +3,74 @@
   :monitor 0
   :geometry
     (geometry
-      :x "0"
-      :y "20px"
-      :width "30%"
-      :height "10%"
-      :anchor "top center")
+      :x "9px"
+      :y "9px"
+      :width "84px"
+      :height "42px"
+      :anchor "bottom right")
   :stacking "fg"
-  :exclusive true ; Hyprland - Whether the compositor should reserve space for the window automatically.
+  :exclusive false ; Hyprland - Whether the compositor should reserve space for the window automatically.
   :focusable false
   ;;;
-  (charge_display)
+  (dock_box_charge_display)
   )
+
+(defwidget dock_box_charge_display [] ;; called system in https://github.com/adi1090x/widgets/blob/main/eww/arin/eww.yuck
+  (box
+    :class "dockbox"
+    ;;;
+    (box
+      :orientation "h"
+      :spacing 16
+      :valign "center"
+      :halign "center"
+      :space-evenly "false"
+      :vexpand "false"
+      :hexpand "false"
+      ;;;
+      (charge_display)
+    )
+  )
+)
 
 (defwidget charge_display []
   ;;;
-  (label :text "CHARGE: ${charge}%")
-  )
+  (button
+    ;:onclick "scripts/widget_apps --pow"
+    ;;;
+    (box
+      :orientation "h"
+      :spacing 8
+      :valign "center" :halign "center"
+      :space-evenly "false"
+      :vexpand "false" :hexpand "false"
+      ;;;
+      (box
+        :class "trayicon" ;TODO scss
+        :style "background-image: url('${BAT_ICON}');"
+        ;;;
+      )
+      (label
+        :class "infotext" ;TODO scss
+        :halign "start"
+        :text BAT_PERC
+        ;;;
+      )
 
-(defpoll charge
+    )
+  )
+)
+
+(defpoll BAT_PERC
   :interval "5s"
   :initial "<CHARGE>"
   :run-while true
   ;;;
-  `cat /sys/class/power_supply/BAT1/capacity`)
+  `./scripts/battery --perc`)
+
+(defpoll BAT_ICON
+  :interval "5s"
+  :run-while true
+  ;;;
+  `./scripts/battery --icon`)
+

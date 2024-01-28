@@ -1,0 +1,30 @@
+* {
+  all: unset;
+  font-family: feather;
+  font-family: "JetBrains Mono";
+  color: #151515; // TODO
+}
+
+.dockbox {
+  background-color: rgba(245, 238, 230, 0.2);
+  border: 1px solid #161616;
+  border-radius: 12px;
+}
+
+.trayicon {
+  background-repeat: no-repeat;
+  background-size: 24px;
+  min-height: 24px;
+  min-width: 24px;
+  margin: 8px 0px 0px 0px;
+}
+
+.infotext {
+	background-color: #DCD7CD;
+	border: 0px solid #161616;
+	border-radius: 16px;
+	font-size : 14px;
+	padding: 0px 5px 0px 5px;
+	margin: 10px 0px 10px 0px;
+	font-weight : bold;
+}
