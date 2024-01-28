@@ -1,0 +1,28 @@
+; Example window for hyprland
+(defwindow charge_display_window
+  :monitor 0
+  :geometry
+    (geometry
+      :x "0"
+      :y "20px"
+      :width "30%"
+      :height "10%"
+      :anchor "top center")
+  :stacking "fg"
+  :exclusive true ; Hyprland - Whether the compositor should reserve space for the window automatically.
+  :focusable false
+  ;;;
+  (charge_display)
+  )
+
+(defwidget charge_display []
+  ;;;
+  (label :text "CHARGE: ${charge}%")
+  )
+
+(defpoll charge
+  :interval "5s"
+  :initial "<CHARGE>"
+  :run-while true
+  ;;;
+  `cat /sys/class/power_supply/BAT1/capacity`)
