@@ -17,7 +17,7 @@
 
 (defwidget dock_box_charge_display [] ;; called system in https://github.com/adi1090x/widgets/blob/main/eww/arin/eww.yuck
   (box
-    :class "dockbox"
+    :class "dockbox_charge"
     ;;;
     (box
       :orientation "h"
