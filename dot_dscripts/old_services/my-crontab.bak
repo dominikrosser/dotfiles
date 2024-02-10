@@ -1,0 +1,4 @@
+
+*/10 * * * * /usr/bin/rclone sync /home/domi/RClone/gdrive_dr@pm.ch gdrive-dr@pm:/
+*/10 * * * * /usr/bin/rclone sync /home/domi/RClone/gdrive_ss@gm.com gdrive-ss@gm:/
+*/10 * * * * /usr/bin/rclone sync /home/domi/RClone/gphotos_dr@pm.ch google-photos_dr@pm:/
