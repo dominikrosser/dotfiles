@@ -1,0 +1,13 @@
+[Unit]
+Description=RClone VFS Mount Service
+After=network.target
+
+[Service]
+User=domi
+#ExecStart=/usr/bin/rclone --vfs-cache-mode writes mount gdrive-ss@gm: /home/domi/RClone/gdrive_ss@gm.com
+#On cronie now crontab -e ... ExecStart=/usr/bin/rclone sync gdrive-ss@gm: /home/domi/RClone/gdrive_ss@gm.com
+Restart=on-abort
+
+[Install]
+WantedBy=default.target
+

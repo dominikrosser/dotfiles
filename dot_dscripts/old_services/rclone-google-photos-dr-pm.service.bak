@@ -1,0 +1,13 @@
+[Unit]
+Description=RClone VFS Mount Service
+After=network.target
+
+[Service]
+User=domi
+#ExecStart=/usr/bin/rclone --vfs-cache-mode writes mount google-photos_dr@pm: /home/domi/RClone/gphotos_dr@pm.ch
+# On cronie now ExecStart=/usr/bin/rclone sync google-photos_dr@pm: /home/domi/RClone/gphotos_dr@pm.ch
+Restart=on-abort
+
+[Install]
+WantedBy=default.target
+

@@ -1,0 +1,12 @@
+[Unit]
+Description=RClone VFS Mount Service
+After=network.target
+
+[Service]
+User=domi
+#Now on cronie ExecStart=/usr/bin/rclone sync /home/domi/RClone/gdrive_dr@pm.ch gdrive-dr@pm:/ 
+Restart=on-abort
+
+[Install]
+WantedBy=default.target
+
