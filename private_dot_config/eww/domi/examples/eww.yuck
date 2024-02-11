@@ -1,0 +1,48 @@
+; Example window for hyprland
+(defwindow example_window_for_hyprland
+  :monitor 0
+  :geometry
+    (geometry
+      :x "0"
+      :y "20px"
+      :width "30%"
+      :height "10%"
+      :anchor "top center")
+  :stacking "fg"
+  :exclusive true ; Hyprland - Whether the compositor should reserve space for the window automatically.
+  :focusable false
+  ;;;
+
+  )
+
+; Example variable
+(defvar foo "initial value")
+(defvar time-visible false)
+; eww update foo="new value"
+
+; Example poll
+; runs a provided shell script repeatedly in a given time interval.
+(defpoll time
+  :interval "1s"
+  :initial "initial value"
+  :run-while time-visible
+  ;;;
+  `date +%H:%M:%S`)
+
+; Example listen
+; runs a script once and then reads its output continuously
+(deflisten fool :initial "whatever"
+  `tail -F /tmp/some_file`)
+
+; Literals - dynamically generate widgets:
+(defvar variable_containing_yuck
+  "(box (button 'foo') (button 'bar'))")
+
+; then, inside your widget, use:
+(literal :content variable_containing_yuck)
+
+; Splitting up configuration
+(include "./path/to/your/file.yuck")
+
+; Using a separate eww configuration directory
+; eww -c /path/to/your/config/dir

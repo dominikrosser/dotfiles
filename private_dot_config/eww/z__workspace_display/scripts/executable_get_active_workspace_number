@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo -e "$(hyprctl -j monitors)" | jq -r '.[0] | "\(.activeWorkspace.id)"'

@@ -1,0 +1,20 @@
+(defvar user_name "domi")
+(defvar operating_system "arch")
+
+(defpoll BAT_PERC
+  :interval "5s"
+  :initial "<CHARGE>"
+  :run-while true
+  ;;;
+  `./domi/scripts/battery --perc`)
+
+(defpoll BAT_ICON
+  :interval "5s"
+  :run-while true
+  ;;;
+  `./domi/scripts/battery --icon`)
+
+(include "./domi/yuck/widgets.yuck")
+(include "./domi/yuck/windows.yuck")
+(include "./domi/setups/topbar_laptop.yuck")
+(include "./domi/setups/topbar_tablet.yuck")

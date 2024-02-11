@@ -1,0 +1,37 @@
+$fg_color_topbar_laptop: $fg_color;
+$bg_color_topbar_laptop: $bg_color;
+.hbarTopbarLaptop-hpanel {
+  min-height: 2.0em;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: $fg_color_topbar_laptop;
+  //background-color: $bg_color_topbar_laptop;
+
+  //border-bottom: $border_width solid $popover_border_color;
+  //box-shadow: 0 0 6px 0 rgba(0,0,0,0.8);
+
+  .hbarTopbarLaptop-LeftBar {
+    margin: 0em 0em 0em .65em;
+    //background-color: yellow;
+    //color: red;
+  }
+
+  .hbarTopbarLaptop-CenterBar {
+    //background-color: blue;
+    //color: red;
+  }
+
+  .hbarTopbarLaptop-RightBar {
+    margin: 0em .65em 0em 0em;
+    //background-color: green;
+    //color: red;
+  }
+
+  .hbarTopbarLaptop-BatTrayiconBox {
+    background-repeat: no-repeat;
+    background-size: 1.8em;
+    min-height: 1.8em;
+    min-width: 1.8em;
+    margin: 0 0px 0 -5px;
+  }
+}

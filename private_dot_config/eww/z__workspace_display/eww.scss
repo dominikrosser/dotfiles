@@ -1,0 +1,19 @@
+* {
+  all: unset;
+  font-family: feather;
+  font-family: "JetBrains Mono";
+  color: #151515;
+}
+
+.ws_active_workspace_num {
+  font-size: 28;
+  color: red;
+}
+
+.dockbox_workspaces {
+  background-color: rgba(245, 238, 230, 0.2);
+  border: 1px solid red;
+  border-radius: 0px;
+
+  margin-left: 6px;
+}

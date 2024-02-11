@@ -1,0 +1,46 @@
+(defwindow workspaces_window
+  :monitor 0
+  :geometry
+    (geometry
+      :x "0"
+      :y "0"
+      :width "100%"
+      :height "0px"
+      :anchor "top center")
+  :stacking "fg"
+  :exclusive true ; Hyprland - Whether the compositor should reserve space for the window automatically.
+  :focusable false
+  ;;;
+  (workspaces_widget)
+)
+
+(defwidget workspaces_widget []
+  (box
+    :class "dockbox_workspaces"
+    :vexpand "false" :hexpand "true"
+    :valign "center" :halign "start"
+    ;;;
+    (box
+      :orientation "h"
+      :spacing 16
+      :valign "center" :halign "center"
+      :vexpand "false" :hexpand "false"
+      :space-evenly "false"
+      (active_ws_num)
+    )
+  )
+)
+
+(defwidget active_ws_num []
+  (label
+    :class "ws_active_workspace_num"
+    :text "${WS_ACTIVE_WORKSPACE_NUM}"
+  )
+)
+
+
+(defpoll WS_ACTIVE_WORKSPACE_NUM
+  :interval "0.1s"
+  ;;;
+  `./scripts/get_active_workspace_number`
+)
