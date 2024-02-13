@@ -2,19 +2,51 @@
 (defvar operating_system "arch")
 
 (defpoll BAT_PERC
-  :interval "5s"
+  :interval "3s"
   :initial "<CHARGE>"
   :run-while true
   ;;;
   `./domi/scripts/battery --perc`)
 
 (defpoll BAT_ICON
-  :interval "5s"
+  :interval "3s"
   :run-while true
   ;;;
   `./domi/scripts/battery --icon`)
+
+(defpoll NETWORK_ICON
+  :interval "3s"
+  :run-while true
+  ;;;
+  `./domi/scripts/network --icon`)
+
+(defpoll NETWORK_SSID
+  :interval "3s"
+  :run-while true
+  ;;;
+  `./domi/scripts/network --ssid`)
+
+(defpoll NETWORK_QUALITY
+  :interval "3s"
+  :run-while true
+  ;;;
+  `./domi/scripts/network --quality`)
+
+(defpoll NETWORK_STATUS
+  :interval "3s"
+  :run-while true
+  ;;;
+  `./domi/scripts/network --status`)
+
+(defpoll NETWORK_LATENCY
+  :interval "3s"
+  :run-while true
+  ;;;
+  `./domi/scripts/network --latency`)
+
 
 (include "./domi/yuck/widgets.yuck")
 (include "./domi/yuck/windows.yuck")
 (include "./domi/setups/topbar_laptop.yuck")
 (include "./domi/setups/topbar_tablet.yuck")
+(include "./domi/setups/sidebar_tablet.yuck")

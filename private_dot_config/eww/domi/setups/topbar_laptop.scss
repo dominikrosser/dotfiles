@@ -1,11 +1,12 @@
 $fg_color_topbar_laptop: $fg_color;
 $bg_color_topbar_laptop: $bg_color;
 .hbarTopbarLaptop-hpanel {
-  min-height: 2.0em;
+  min-height: 1.6em;
   font-weight: bold;
   font-size: 1.1em;
   color: $fg_color_topbar_laptop;
   //background-color: $bg_color_topbar_laptop;
+  //background-color: yellow;
 
   //border-bottom: $border_width solid $popover_border_color;
   //box-shadow: 0 0 6px 0 rgba(0,0,0,0.8);
@@ -33,5 +34,12 @@ $bg_color_topbar_laptop: $bg_color;
     min-height: 1.8em;
     min-width: 1.8em;
     margin: 0 0px 0 -5px;
+  }
+
+  .hbarTopbarLaptop-lblOnline {
+    color: darkgreen;
+  }
+  .hbarTopbarLaptop-lblOffline {
+    color: darkred;
   }
 }
