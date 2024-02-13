@@ -12,7 +12,7 @@ $bg_color_topbar_laptop: $bg_color;
   //box-shadow: 0 0 6px 0 rgba(0,0,0,0.8);
 
   .hbarTopbarLaptop-LeftBar {
-    margin: 0em 0em 0em .65em;
+    margin: 0em 0em 0em 0em;//.65em;
     //background-color: yellow;
     //color: red;
   }
@@ -41,5 +41,12 @@ $bg_color_topbar_laptop: $bg_color;
   }
   .hbarTopbarLaptop-lblOffline {
     color: darkred;
+  }
+
+  .hbarTopbarLaptop-WindowTitleText {
+    color: darkblue;
+    font-style: italic;
+    font-weight: bold;
+    //font-size: 16px;
   }
 }

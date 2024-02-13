@@ -20,16 +20,16 @@
       ;;; 
       ;(label
       ;  :halign "start"
-      ;  :text "HBAR LEFT BAR"
-        ;;;
-      ;)
+      ;  :text "HBAR LEFT BAR")
       ;(kill_window_button)
+      (hbar_topbar_laptop_archlogo)
     )
 
     (box
       :class "hbarTopbarLaptop-CenterBar"
       ;;;
       ;(label :text "HBAR CENTER BAR")
+      (hbar_topbar_laptop_activewindow0)
     )
 
     (box
@@ -105,3 +105,29 @@
     )
   )
 )
+
+;; TOSORT
+(defwidget hbar_topbar_laptop_archlogo []
+  (button
+    :style "padding-left: 1.4em;"
+    (box
+      :class "hbarTopbarLaptop-BatTrayiconBox"
+      :style "background-image: url('./domi/assets/img/logos/arch_logo_3.png')"
+      ;;;
+    )
+  )
+)
+
+;; hyprland-activewindow
+(deflisten active_windows "hyprland-activewindow _")
+(defwidget hbar_topbar_laptop_active_window [monitor]
+  (box
+    (label :text "${active_windows['${monitor}'].title}" :class "hbarTopbarLaptop-WindowTitleText")
+  )
+)
+(defwidget hbar_topbar_laptop_activewindow0 []
+  (box
+    (hbar_topbar_laptop_active_window :monitor 0)
+  )
+)
+
