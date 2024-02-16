@@ -1,0 +1,39 @@
+$fg_color_sidebar_tablet: $fg_color;
+$bg_color_sidebar_tablet: $bg_color;
+
+.vbarSidebarTablet-vpanel {
+  min-width: 3.2em;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: $fg_color_sidebar_tablet;
+  //background-color: $bg_color_sidebar_tablet;
+  
+  padding: 6;
+
+  .widget {
+    @include widget($radii: $radii);
+  }
+
+  button {
+    //background-color: yellow;
+    @include button($flat: false, $interactive: true, $radii: $radii, $focusable: true);
+    min-height: 3em;
+    min-width: 3em; 
+  }
+
+  .vbarSidebarTablet-BatTrayiconBox {
+    background-repeat: no-repeat;
+    background-size: 1.8em;
+    min-height: 1.8em;
+    min-width: 1.8em;
+    margin: 0 0 0 0;
+  }
+
+  .vbarSidebarTablet-NetworkTrayiconBox {
+    background-repeat: no-repeat;
+    background-size: 3em;
+    min-height: 3em;
+    min-width: 3em;
+    margin: 0 0 0 0;
+  }
+}

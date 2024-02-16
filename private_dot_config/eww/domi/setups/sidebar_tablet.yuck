@@ -1,0 +1,131 @@
+(defwindow sidebar_tablet
+  :monitor 0
+  :exclusive true
+  :stacking "fg"
+  :namespace "eww_bar" ;???
+  :geometry (geometry :x "0"
+                      :y "0"
+                      :width "1%"
+                      :height "100%"
+                      :anchor "center left")
+  (vbar_sidebar_tablet)
+)
+
+(defwidget vbar_sidebar_tablet []
+  (centerbox
+    :orientation "v"
+    :class "vbarSidebarTablet-vpanel"; ${workspaces.active_empty ? "floating" : ""}"
+    ;;;
+    (box
+      :class "vbarSidebarTablet-upperBar"
+      :space-evenly false
+      :valign "start"
+      :orientation "v"
+      ;;;
+      ;(label :text "VBAR UPPER")
+      (vsep)
+      (kill_window_button)
+      (vsep)
+      (toggle_fullscreen_button)
+      (vsep)
+    )
+
+    (box
+      :class "vbarSidebarTablet-middleBar"
+      :orientation "v"
+      :space-evenly false
+      ;;;
+      ;(label :text "VBAR MIDDLE")
+      (vbar_sidebar_tablet_network_display)
+    )
+
+    (box
+      :class "vbarSidebarTablet-lowerBar"
+      :orientation "v"
+      :space-evenly false
+      :valign "end"
+      ;;;
+      ;(label :text "VBAR LOWER")
+      (vsep)
+      (vbar_sidebar_tablet_charge_display)
+      (vsep)
+    )
+  )
+)
+
+;; TODO PLACEHOLDER
+(defwidget vsep []
+  (label :text "")
+)
+
+;; TOSORT KILL BUTTON TO KILL A WINDOW (SELECT)
+(defwidget kill_window_button []
+  (box :class "widget"
+    ;;;
+    (button :onclick "hyprctl kill"
+      (label :halign "center" :text "PKILL")
+    )
+  )
+)
+
+;; TOSORT TOGGLE FULLSCREEN
+(defwidget toggle_fullscreen_button []
+  (box :class "widget"
+    ;;;
+    (button :onclick "hyprctl dispatch fullscreen 1"
+      (label :halign "center" :text "F")
+    )
+  )
+)
+
+(defwidget vbar_sidebar_tablet_charge_display []
+  (button
+    ;:onclick ...
+    ;;;
+    (box
+      :orientation "h"
+      :spacing 0
+      :valign "center" :halign "center"
+      :space-evenly "false"
+      :vexpand "false" :hexpand "false"
+      ;;;
+      (label
+        :halign "start"
+        :text BAT_PERC
+        ;;;
+      )
+      (box
+        :class "vbarSidebarTablet-BatTrayiconBox"
+        :style "background-image: url('${BAT_ICON}');"
+        ;;;
+      )
+    )
+  )
+)
+
+(defwidget vbar_sidebar_tablet_network_display []
+  (button
+    ;:onclick ...
+    ;;;
+    (box
+      :orientation "v"
+      :spacing 0
+      :valign "center" :halign "center"
+      :space-evenly false
+      :vexpand "false" :hexpand "false"
+      ;;;
+      (label
+        :text NETWORK_SSID
+        :style "color: darkgray;"
+        :halign "center"
+        :visible false
+      )
+      (box
+        :valign "center" :halign "center"
+        :class "vbarSidebarTablet-NetworkTrayiconBox"
+        :style "background-image: url('${NETWORK_ICON}');"
+        ;;;
+      )
+    )
+  )
+)

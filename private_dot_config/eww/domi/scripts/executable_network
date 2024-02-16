@@ -1,0 +1,55 @@
+
+#!/bin/bash
+
+# Get Wi-Fi device name
+WIFI_DEV=$(iw dev | awk '$1=="Interface"{print $2}')
+
+# Get signal strength and SSID
+# This part is corrected to properly parse and assign signal strength and SSID
+SIGNAL=$(iw dev "$WIFI_DEV" link | grep 'signal' | awk '{print $2}')
+SSID=$(iw dev "$WIFI_DEV" link | grep 'SSID' | awk -F': ' '{print $2}')
+
+# Check for Internet connectivity
+INTERNET_STATUS=$(ping -q -w 1 -c 1 8.8.8.8 > /dev/null && echo "online" || echo "offline")
+
+# Calculate latency to a common server
+LATENCY=$(ping -c 4 8.8.8.8 | tail -1| awk '{print $4}' | cut -d '/' -f 2)
+
+icon_fn() {
+    # Check for the presence of a signal
+    if [[ -z "$SIGNAL" ]]; then
+        echo "./domi/assets/img/wifi/conn_sea/0.png" # No signal
+    elif [[ $SIGNAL -ge -30 ]]; then
+        echo "./domi/assets/img/wifi/conn_sea/8.png" # Excellent signal
+    elif [[ $SIGNAL -lt -30 && $SIGNAL -ge -40 ]]; then
+        echo "./domi/assets/img/wifi/conn_sea/7.png"
+    elif [[ $SIGNAL -lt -40 && $SIGNAL -ge -50 ]]; then
+        echo "./domi/assets/img/wifi/conn_sea/6.png"
+    elif [[ $SIGNAL -lt -50 && $SIGNAL -ge -60 ]]; then
+        echo "./domi/assets/img/wifi/conn_sea/5.png"
+    elif [[ $SIGNAL -lt -60 && $SIGNAL -ge -70 ]]; then
+        echo "./domi/assets/img/wifi/conn_sea/4.png"
+    elif [[ $SIGNAL -lt -70 && $SIGNAL -ge -80 ]]; then
+        echo "./domi/assets/img/wifi/conn_sea/3.png"
+    elif [[ $SIGNAL -lt -80 && $SIGNAL -ge -90 ]]; then
+        echo "./domi/assets/img/wifi/conn_sea/2.png"
+    elif [[ $SIGNAL -lt -90 ]]; then
+        echo "./domi/assets/img/wifi/conn_sea/1.png" # Poor signal
+    else
+        echo "./domi/assets/img/wifi/conn_sea/default.png" # Fallback for any unexpected value
+    fi
+}
+
+
+
+if [[ $1 == '--icon' ]]; then
+    icon_fn
+elif [[ $1 == '--ssid' ]]; then
+    echo "$SSID"
+elif [[ $1 == '--quality' ]]; then
+    echo "$SIGNAL dBm"
+elif [[ $1 == '--status' ]]; then
+    echo "$INTERNET_STATUS"
+elif [[ $1 == '--latency' ]]; then
+    echo "$LATENCY ms"
+fi
