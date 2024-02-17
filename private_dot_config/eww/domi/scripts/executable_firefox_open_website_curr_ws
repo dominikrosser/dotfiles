@@ -1,0 +1,33 @@
+
+#!/bin/bash
+
+# Check if website URL is provided as an argument
+if [ -z "$1" ]; then
+    echo "Usage: $0 <website_url>"
+    exit 1
+fi
+
+# Website URL
+url="$1"
+
+# Get the active workspace ID using hyprctl
+current_workspace=$(hyprctl activeworkspace -j | jq -r '.id')
+echo "CURWS: $current_workspace"
+
+clients=$(hyprctl clients -j)
+echo "CLIENTS: $clients"
+
+varia=$(echo "$clients" | jq -r --arg current_workspace "$current_workspace" '.[] | select(.workspace.id == ($current_workspace|tonumber) and .class == "firefox")')
+echo "VARIA: $varia"
+
+# Check if Firefox is already open in the current workspace
+if [ ! -z "$varia" ]; then
+    # Firefox is in the current workspace, open the URL in a new window
+    echo "IN CURRENT" 
+    firefox "$url"
+else
+    # Firefox is not open in the current workspace, open a new instance in the current workspace
+    echo "NOT IN CURRENT"
+    firefox --new-window "$url"
+fi
+

@@ -54,5 +54,20 @@ $font_size: 14px;
     }
 }
 
+@mixin floating_widget($shadow: true, $padding: $popover_padding){
+    @if $shadow {
+        box-shadow: 0 0 5px 0 rgba(0,0,0,0.6),
+                    inset 0 0 0 $border_width $popover_border_color;
+    } @else {
+        box-shadow: inset 0 0 0 $border_width $popover_border_color;
+    }
+    border-radius: $popover_radius;
+    margin: $wm_gaps;
+    background-color: $bg_color;
+    color: $fg_color;
+    padding: $padding;
+}
+
 @import "./domi/setups/topbar_laptop.scss";
 @import "./domi/setups/sidebar_tablet.scss";
+@import "./domi/setups/touch_menu_s4.scss";

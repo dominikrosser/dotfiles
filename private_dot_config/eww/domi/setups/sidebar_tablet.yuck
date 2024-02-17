@@ -28,6 +28,7 @@
       (vsep)
       (toggle_fullscreen_button)
       (vsep)
+      (vbar_sidebar_tablet_touchmenus4_moodle_btn)
     )
 
     (box
@@ -99,6 +100,20 @@
         :style "background-image: url('${BAT_ICON}');"
         ;;;
       )
+    )
+  )
+)
+
+(defwidget vbar_sidebar_tablet_touchmenus4_moodle_btn []
+  (button 
+    :onclick "eww open touch_menu_s4"
+    ;:style "background-color: blue; min-width: 40px; min-height: 40px;" 
+    :hexpand false :vexpand false
+    ;;;
+    (box
+      :class "vbarSidebarTablet-MoodleTrayiconBox"
+      :style "background-image: url('./domi/assets/img/moodle/moodle-96.png')" ;TODO defvar for the path
+      ;;;
     )
   )
 )

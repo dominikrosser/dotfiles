@@ -1,0 +1,19 @@
+.touch-menu-s4 {
+  @include floating_widget;
+
+  .touch-menu-s4-closeBtn-iconBox {
+    background-repeat: no-repeat;
+    background-size: 96px;
+    min-height: 96px;
+    min-width: 96px;
+    margin: 0 0 0 0;
+  }
+
+  .fach-link-icon {
+    background-repeat: no-repeat;
+    background-size: 96px;
+    min-height: 96px;
+    min-width: 96px;
+    margin: 0 0 0 0;
+  }
+}

@@ -47,3 +47,4 @@
 (include "./domi/setups/topbar_laptop.yuck")
 (include "./domi/setups/topbar_tablet.yuck")
 (include "./domi/setups/sidebar_tablet.yuck")
+(include "./domi/setups/touch_menu_s4.yuck")

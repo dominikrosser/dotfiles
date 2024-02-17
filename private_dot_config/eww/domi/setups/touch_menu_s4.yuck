@@ -1,0 +1,126 @@
+; Example window for hyprland
+(defwindow touch_menu_s4
+  :monitor 0
+  :geometry
+    (geometry
+      :x "0"
+      :y "20px"
+      :width "30%"
+      :height "10%"
+      :anchor "top center")
+  :stacking "overlay"
+  :exclusive false ; Hyprland - Whether the compositor should reserve space for the window automatically.
+  :focusable true
+  ;;;
+  (touch_menu_s4)
+)
+
+; TOSORT This is basically an open app button, here used for opening websites
+(defwidget fach_link_button [icon_path onclick name]
+  (button
+    :class "fach-link-button" ;TODO
+    :onclick onclick
+    :valign "start"
+    ;;;
+    (box
+      :space-evenly false
+      :class "fach-link-content"
+      ;;;
+      (box
+        :class "fach-link-icon"
+        :style "background-image: url('${icon_path}')"
+        ;;;
+      )
+      (box
+        :orientation "v"
+        :space-evenly false
+        :valign "center"
+        ;;;
+        (label
+          :xalign 0
+          :valign "center"
+          ;TODO :class "name"
+          :text name
+          ;;;
+        )
+        (label
+          :xalign 0
+          ;:class "description"
+          :wrap true
+          :limit-width 60
+          :visible false ;{description != 'null'}
+          ;:text description
+          ;;;
+        )
+      )
+    )
+  )
+)
+
+(defwidget fach_link_button_separator []
+  (box
+    :class "fach-link-button-separator" ; TODO
+    :hexpand true
+    ;;;
+  )
+)
+
+(defwidget touch_menu_s4_closeBtn []
+  (button 
+    :onclick "eww close touch_menu_s4"
+    ;:style "background-color: blue; min-width: 40px; min-height: 40px;" 
+    :hexpand false :vexpand false
+    ;;;
+    (box
+      :class "touch-menu-s4-closeBtn-iconBox"
+      :style "background-image: url('./domi/assets/img/close/close-window-96.png')" ;TODO defvar for the path
+      ;;;
+    )
+  )
+)
+
+(defwidget touch_menu_s4 []
+  (box
+    :class "touch-menu-s4"
+    :space-evenly false
+    ;;;
+    (touch_menu_s4_closeBtn)  
+    ;
+    (fach_link_button_separator)
+    ;
+    (fach_link_button
+      :icon_path "./domi/assets/img/faecher_sem_4prime/EM_Icon.png"
+      :onclick "./domi/scripts/firefox_open_website_curr_ws https://moodle-app2.let.ethz.ch/course/view.php?id=22170"
+      :name "ED"
+      ;;;
+    )
+    ;
+    (fach_link_button_separator)
+    ;
+    (fach_link_button
+      :icon_path "./domi/assets/img/faecher_sem_4prime/MMP2_Icon_Symmetries1.png"
+      :onclick "./domi/scripts/firefox_open_website_curr_ws https://moodle-app2.let.ethz.ch/course/view.php?id=22170"
+      :name "MMP2"
+      ;;;
+    )
+    ;
+    (fach_link_button_separator)
+    ;
+    (fach_link_button
+      :icon_path "./domi/assets/img/faecher_sem_4prime/Numerik_Icon.png"
+      :onclick "./domi/scripts/firefox_open_website_curr_ws https://moodle-app2.let.ethz.ch/course/view.php?id=22170"
+      :name "Numerik"
+      ;;;
+    )
+    ;
+    (fach_link_button_separator)
+    ;
+    (fach_link_button
+      :icon_path "./domi/assets/img/faecher_sem_4prime/TdW_Icon.png"
+      :onclick "./domi/scripts/firefox_open_website_curr_ws https://moodle-app2.let.ethz.ch/course/view.php?id=22170"
+      :name "TdW"
+      ;;;
+    )
+    ;
+  )
+)
