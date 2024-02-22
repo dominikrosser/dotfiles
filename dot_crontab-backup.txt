@@ -1,0 +1,10 @@
+
+*/5 * * * * /usr/bin/rclone copy /home/domi/RClone/gdrive_dr@pm.ch gdrive-dr@pm:/
+*/5 * * * * /usr/bin/rclone copy gdrive-dr@pm:/ /home/domi/RClone/gdrive_dr@pm.ch
+*/5 * * * * /usr/bin/rclone copy /home/domi/RClone/gdrive_ss@gm.com gdrive-ss@gm:/
+*/5 * * * * /usr/bin/rclone copy gdrive-ss@gm:/ /home/domi/RClone/gdrive_ss@gm.com
+*/5 * * * * /usr/bin/rclone copy /home/domi/RClone/gphotos_dr@pm.ch google-photos_dr@pm:/
+*/5 * * * * /usr/bin/rclone copy google-photos_dr@pm:/ /home/domi/RClone/gphotos_dr@pm.ch 
+
+#@daily anacron -t /home/domi/.anacrontab -S /home/domi/.anacron
+*/1 * * * * anacron -t /home/domi/.anacrontab -S /home/domi/.anacron
