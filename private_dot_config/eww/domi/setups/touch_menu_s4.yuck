@@ -89,7 +89,7 @@
     ;
     (fach_link_button
       :icon_path "./domi/assets/img/faecher_sem_4prime/EM_Icon.png"
-      :onclick "./domi/scripts/firefox_open_website_curr_ws https://moodle-app2.let.ethz.ch/course/view.php?id=22147 & eww close touch_menu_s4"
+      :onclick "./domi/scripts/brave_open_website_curr_ws https://moodle-app2.let.ethz.ch/course/view.php?id=22147 & eww close touch_menu_s4"
       :name "ED"
       ;;;
     )
@@ -98,7 +98,7 @@
     ;
     (fach_link_button
       :icon_path "./domi/assets/img/faecher_sem_4prime/MMP2_Icon_Symmetries1.png"
-      :onclick "./domi/scripts/firefox_open_website_curr_ws https://moodle-app2.let.ethz.ch/course/view.php?id=22236 & eww close touch_menu_s4"
+      :onclick "./domi/scripts/brave_open_website_curr_ws https://moodle-app2.let.ethz.ch/course/view.php?id=22236 & eww close touch_menu_s4"
       :name "MMP2"
       ;;;
     )
@@ -107,7 +107,7 @@
     ;
     (fach_link_button
       :icon_path "./domi/assets/img/faecher_sem_4prime/Numerik_Icon.png"
-      :onclick "./domi/scripts/firefox_open_website_curr_ws https://moodle-app2.let.ethz.ch/course/view.php?id=22296 & eww close touch_menu_s4"
+      :onclick "./domi/scripts/brave_open_website_curr_ws https://moodle-app2.let.ethz.ch/course/view.php?id=22296 & eww close touch_menu_s4"
       :name "Numerik"
       ;;;
     )
@@ -116,7 +116,7 @@
     ;
     (fach_link_button
       :icon_path "./domi/assets/img/faecher_sem_4prime/TdW_Icon.png"
-      :onclick "./domi/scripts/firefox_open_website_curr_ws https://moodle-app2.let.ethz.ch/course/view.php?id=22170 & eww close touch_menu_s4"
+      :onclick "./domi/scripts/brave_open_website_curr_ws https://moodle-app2.let.ethz.ch/course/view.php?id=22170 & eww close touch_menu_s4"
       :name "TdW"
       ;;;
     )
