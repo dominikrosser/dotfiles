@@ -1,5 +1,7 @@
 #!/bin/bash
 
+notify-send "Checking for new TdW Serie..."
+
 # base start date for Serie 01
 base_date="2024-02-20"
 

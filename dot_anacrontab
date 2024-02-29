@@ -1,7 +1,9 @@
 # Period, delay, job-identifier, command
+1 0 notify-anacron-serien-todochecks ~/.dscripts/nb_create_todos_s4/notify_anacron_jobs_running.sh
 1 0 add-todo-tdw-task ~/.dscripts/nb_create_todos_s4/add_TdW_todo.sh # Create TdW Serie XX todo
-1 1 add-todo-ed-task ~/.dscripts/nb_create_todos_s4/add_ED_todo.sh # Create ED Serie XX todo
-1 2 add-todo-top-task ~/.dscripts/nb_create_todos_s4/add_TOP_todo.sh # Create TOP Serie XX todo
-1 3 add-todo-numerik-task ~/.dscripts/nb_create_todos_s4/add_Numerik_todo.sh # Create Numerik Serie XX todo
+1 0 add-todo-ed-task ~/.dscripts/nb_create_todos_s4/add_ED_todo.sh # Create ED Serie XX todo
+1 0 add-todo-top-task ~/.dscripts/nb_create_todos_s4/add_TOP_todo.sh # Create TOP Serie XX todo
+1 0 add-todo-numerik-task ~/.dscripts/nb_create_todos_s4/add_Numerik_todo.sh # Create Numerik Serie XX todo
+1 0 add-todo-mmp2-task ~/.dscripts/nb_create_todos_s4/add_MMP2_todo.sh # Create MMP2 Serie XX todo
 
-1 4 backup-crontab-to-user-dir ~/.dscripts/backup-crontab.sh # Copy the crontab configuration locally
+1 2 backup-crontab-to-user-dir ~/.dscripts/backup-crontab.sh # Copy the crontab configuration locally

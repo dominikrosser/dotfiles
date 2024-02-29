@@ -1,5 +1,7 @@
 #!/bin/bash
 
+notify-send "Checking for new Topologie Serie..."
+
 # Base start date for TOP Serie 01
 base_date="2024-02-21" # Uploaded on 21 Feb 2024
 

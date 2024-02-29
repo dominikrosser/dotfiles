@@ -1,5 +1,7 @@
 #!/bin/bash
 
+notify-send "Checking for new Numerik Serie..."
+
 # Base start date for Numerik Serie 01
 base_date="2024-02-19" # Opened on 19 Feb 2024
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+notify-send "Checking for new ED Serie..."
+
 # Base start date for ED Serie 01
 base_date="2024-02-21" # Opened: Wednesday, 21 February 2024, 9:45 AM
 

@@ -52,6 +52,13 @@ alias lw="lsd -l --blocks=permission,size,name"
 alias alwa="lsd -la --blocks=permission,size,name"
 alias nv="nvim ."
 
+# Personal alias useful for studies
+#alias serien="nb eth-s4:todos open --tags \"#Serie\" && ~/.dscripts/show_series_with_due.sh"
+serien() {
+    nb eth-s4:todos open --tags "#Serie" && zsh ~/.dscripts/show_series_with_due.sh
+}
+alias serien_all="nb eth-s4:todos --tags \"#Serie\""
+
 # Move with vi keys instead of tab etc
 zstyle ':completion:*' menu select
 zmodload zsh/complist
