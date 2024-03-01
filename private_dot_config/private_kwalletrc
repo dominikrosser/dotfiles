@@ -1,0 +1,5 @@
+[Migration]
+alreadyMigrated=true
+[Wallet]
+Enabled=false
+First Use=false
