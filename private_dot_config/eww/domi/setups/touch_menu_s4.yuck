@@ -14,43 +14,28 @@
   (touch_menu_s4)
 )
 
-; TOSORT This is basically an open app button, here used for opening websites
 (defwidget fach_link_button [icon_path onclick name]
   (button
-    :class "fach-link-button" ;TODO
+    :class "fach-link-button"
     :onclick onclick
     :valign "start"
     ;;;
     (box
       :space-evenly false
+      :orientation "v"
       :class "fach-link-content"
       ;;;
       (box
         :class "fach-link-icon"
-        :style "background-image: url('${icon_path}')"
+        :style "background-image: url('${icon_path}'); background-size: cover;"
         ;;;
       )
-      (box
-        :orientation "v"
-        :space-evenly false
+      (label
+        :class "fach-link-name"
+        :text name
+        :xalign 0.5
         :valign "center"
         ;;;
-        (label
-          :xalign 0
-          :valign "center"
-          ;TODO :class "name"
-          :text name
-          ;;;
-        )
-        (label
-          :xalign 0
-          ;:class "description"
-          :wrap true
-          :limit-width 60
-          :visible false ;{description != 'null'}
-          ;:text description
-          ;;;
-        )
       )
     )
   )

@@ -22,7 +22,7 @@
       ;  :halign "start"
       ;  :text "HBAR LEFT BAR")
       ;(kill_window_button)
-      (hbar_topbar_laptop_archlogo)
+      ;(hbar_topbar_laptop_archlogo)
     )
 
     (box

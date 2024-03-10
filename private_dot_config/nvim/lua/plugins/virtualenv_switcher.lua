@@ -31,6 +31,7 @@ return {
 			-- })
 
 			vim.keymap.set("n", ";v", api.pick_venv, {})
+      vim.keymap.set("n", "<leader>vr", ":LspRestart<CR>", {})
 			--vim.keymap.set("n", "<leader>vc", api.get_current_venv, {})
 		end,
 	},
