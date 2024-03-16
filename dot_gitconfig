@@ -20,3 +20,7 @@
 [user]
 	email = dominik.rosser@protonmail.ch
 	name = Dominik Rosser
+[credential]
+	helper = cache --timeout 7200
+[maintenance]
+	repo = /home/domi/OneDrive/Documents/ETH/S4/P3/P3-Specific-Heat-Capacity
