@@ -17,3 +17,5 @@ vim.cmd([[
     set t_Ce=\e[4:0m
   endif
 ]])
+
+vim.g.csv_highlight_column = 'y'
