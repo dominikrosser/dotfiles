@@ -11,7 +11,7 @@ return {
 	},
 	config = function()
 		require("neo-tree").setup({
-			close_if_last_window = true,
+			close_if_last_window = false,
 			enable_git_status = true,
 
 			-- These lines are necessary for ahmedkhalf/project
@@ -19,7 +19,7 @@ return {
 			respect_buf_cwd = true,
 			update_focused_file = {
 				enable = true,
-				update_root = true,
+				update_root = false,--true,
 			},
 			---
 

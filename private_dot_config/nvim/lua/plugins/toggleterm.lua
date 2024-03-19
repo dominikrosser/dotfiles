@@ -3,7 +3,7 @@ return {
     version = "*",
     config = function()
       require('toggleterm').setup({
-        open_mapping = [[;t]],
+        open_mapping = [[<leader>t]],
         close_on_exit = false,
         autochdir = true,
         shell = vim.o.shell,
